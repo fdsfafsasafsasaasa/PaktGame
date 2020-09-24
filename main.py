@@ -1,10 +1,8 @@
-from pyglet import app
-
-from window import GameWindow
+from paktgame.window import GameWindow
 
 
 window = GameWindow(640, 480)
 
-from events import *
+from paktgame.events import *
 
-app.run()
+window.run()
