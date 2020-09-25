@@ -11,11 +11,15 @@ class Player(sprite.Sprite):
             x (int): x position
             y (int): y position
         """
-        self.image = pyglet.resource.image("assets/circle.jpg")
-        super().__init__(self, self.image, x, y)
+        image = pyglet.image.load("assets/circle.png")
+        super().__init__(image, x, y)
+        self.image = image
 
-    def update(self):
-        pass
+    def update(self, symbol=None, collision=None):
+        if collision:
+            self.collide(collision)
+        elif symbol:
+            self.move(symbol)
     
     def move(self, symbol):
         if symbol == key.A:

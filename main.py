@@ -1,8 +1,11 @@
-from paktgame.window import GameWindow
+from paktgame.window import Game
+from paktgame.player import Player
 
+import pyglet
+import os
 
-window = GameWindow(640, 480)
+window = Game(640, 480, Player(640//2, 480//2), "PaktGame")
 
-from paktgame.events import *
+# from paktgame.events import *
 
 window.run()
